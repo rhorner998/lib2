@@ -3,8 +3,8 @@ import { Container, Card, Button, Row, Col } from 'react-bootstrap';
 import { useQuery, useMutation } from '@apollo/client';
 
 import Auth from '../utils/auth';
-import { GET_ME } from '../graphql/queries';
-import { REMOVE_BOOK } from '../graphql/mutations';
+import { GET_ME } from '../queries';
+import { REMOVE_BOOK } from '../mutations';
 import { removeBookId } from '../utils/localStorage';
 
 const SavedBooks = () => {

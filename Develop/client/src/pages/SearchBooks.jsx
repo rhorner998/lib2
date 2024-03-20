@@ -3,8 +3,8 @@ import { Container, Col, Form, Button, Card, Row, Alert } from 'react-bootstrap'
 import { useLazyQuery, useMutation } from '@apollo/client';
 
 import Auth from '../utils/auth';
-import { SEARCH_BOOKS } from '../graphql/queries';
-import { SAVE_BOOK } from '../graphql/mutations';
+import { SEARCH_BOOKS } from '../queries';
+import { SAVE_BOOK } from '../mutations';
 import { saveBookIds, getSavedBookIds } from '../utils/localStorage';
 
 const SearchBooks = () => {
