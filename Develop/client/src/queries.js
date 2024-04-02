@@ -17,3 +17,17 @@ export const GET_ME = gql`
     }
   }
 `;
+
+// 
+export const SEARCH_BOOKS = gql`
+  query searchBooks($searchInput: String!) {
+    searchBooks(searchInput: $searchInput) {
+      bookId
+      authors
+      description
+      title
+      image
+      link
+    }
+  }
+`;
