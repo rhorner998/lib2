@@ -1,6 +1,7 @@
 const { User, Book } = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
-const { signToken } = require('../utils/auth'); // Adjust the path as necessary
+const { signToken } = require('../utils/auth'); //
+// const { searchGoogleBooks } = require('./routes/api'); // 
 
 const resolvers = {
   Query: {
@@ -22,6 +23,27 @@ const resolvers = {
     book: async (parent, { title }) => {
       return await Book.findOne({ title });
     },
+    // // New resolver for searching books
+    // searchBooks: async (parent, { searchInput }, context) => {
+    //   if (!context.user) {
+    //     throw new AuthenticationError('You must be logged in to search books!');
+    //   }
+      
+    //   try {
+    //     const { items } = await searchGoogleBooks(searchInput); // Ensure this call matches the expected signature
+    //     return items.map(book => ({
+    //       bookId: book.id,
+    //       authors: book.volumeInfo.authors || ['No author to display'],
+    //       title: book.volumeInfo.title,
+    //       description: book.volumeInfo.description,
+    //       image: book.volumeInfo.imageLinks?.thumbnail || '',
+    //       link: book.volumeInfo.infoLink
+    //     }));
+    //   } catch (error) {
+    //     console.error('Error searching books:', error);
+    //     throw new Error('Error searching for books');
+    //   }
+    // },  
   },
   Mutation: {
     login: async (parent, { email, password }) => {

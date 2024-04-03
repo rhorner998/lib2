@@ -1,4 +1,7 @@
 // cd C:\Users\Admin\bootcamp\booksearch\Develop\server
+// git add .
+// git commit -m"message"
+// git push origin main
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
@@ -8,7 +11,7 @@ const { authMiddleware } = require('./utils/auth');
 
 const app = express();
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 3001;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
